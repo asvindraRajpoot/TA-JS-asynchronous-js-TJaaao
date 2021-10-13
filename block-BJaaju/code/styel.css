@@ -21,7 +21,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
     line-height: 1;
 }
-ol, ul {
+ol, ul,li {
     list-style: none;
 }
 blockquote, q {
@@ -50,6 +50,12 @@ del {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+*,
+::before,
+::after{
+    box-sizing: border-box;
 }
 
 .container{
@@ -89,4 +95,19 @@ input:focus{
 }
 img{
     width: 100%;
+    border: .1rem solid navy;
+    line-height: 0;
+    font-size: 0;
+    border-radius: .44rem;
+   
+}
+figure{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+li{
+    width: 33%;
+    padding: .9rem;
 }
