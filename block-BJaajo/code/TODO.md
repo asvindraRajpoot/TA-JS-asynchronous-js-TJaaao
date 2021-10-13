@@ -6,6 +6,9 @@ Create the execution context diagram of the following code. Also write the outpu
 console.log('First');
 setTimeout(() => console.log('Second'), 0);
 console.log('Third');
+//first
+//Third
+//Second
 ```
 
 2.
@@ -18,6 +21,10 @@ function secondCall() {
 setTimeout(secondCall, 2000); // execute this code after 1000 ms
 setTimeout(() => console.log('Third'), 0); // execute this code after 1000 ms
 console.log('Third');
+//first
+//Third
+//Third
+//Second
 ```
 
 3.
@@ -30,6 +37,10 @@ function secondCall() {
 setTimeout(secondCall, 1000); // execute this code after 1000 ms
 setTimeout(() => console.log('Third'), 0);
 console.log('Fourth');
+//First
+//Fourth
+//Third
+//Second
 ```
 
 4.
@@ -42,6 +53,10 @@ function secondCall() {
 setTimeout(secondCall, 1000); // execute this code after 1000 ms
 setTimeout(() => console.log('Third'), 0);
 console.log('Fourth');
+//First
+//Fourth
+//Third
+//Second
 ```
 
 5. What will be the output of the code below and why? Also write the timing of the output starting with 0 ms.
@@ -60,6 +75,12 @@ setTimeout(function exec() {
 }, 0);
 runWhileLoopForNSeconds(3);
 console.log('Third');
+
+//First oms
+//Third 3000ms
+//Second 3001ms
+//because call stack is busy in executing the code so event loop will not put the fun from callback queue into the call stack
+
 ```
 
 6. Convert the synchronous code given below into asynchronous. If you execute this code it will print one, two and three. Change the code in such a way that it should print `one`, `three` and `two`. You are not allowed to move the code up and down.
@@ -68,24 +89,32 @@ console.log('Third');
 console.log('one');
 console.log('two');
 console.log('three');
+
+
 ```
 
 7. Convert the synchronous code given below into asynchronous. If you execute this code it will print one, two and three. Change the code in such a way that it should print `one`, `three` and `two`. You are not allowed to move the code up and down.
 
 ```js
 console.log('one');
-console.log('two');
+setTimeout(() => console.log('two');), 0);
+
 console.log('three');
 ```
 
 8. Write a function named `asyncForEach` that is similar to `forEach`. But `asyncForEach` is asynchronous in nature rather than synchronous.
 
 ```js
-funciton asyncForEach(){
+function asyncForEach(arr,cb){
+   
+  for(let i=0;i<arr.length;i++){
+    setTimeout(() => cb(arr[i]), 0);
+  }
+
   //
 }
 //  Output of the function below should be
-// one
+// one 
 // three
 //  1, 2, 3
 
@@ -108,6 +137,6 @@ Convert the code below in such way that the output should be the one below
 
 ```js
 console.log('First Call');
-[1, 2, 3, 4, 5].firEach((num) => console.log(num));
+[1, 2, 3, 4, 5].forEach((num) => setTimeout(() => console.log(num), 0););
 console.log('Last Call');
 ```
