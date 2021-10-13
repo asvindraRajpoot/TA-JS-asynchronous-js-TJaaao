@@ -1,0 +1,159 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.container{
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+html{
+    font-size: 16px;
+}
+body{
+    line-height: 1.5;
+    background-color: #F1DEB8;
+}
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+h1{
+    font-size: 2rem;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+input{
+    width: 10.6rem;
+    padding: .7rem 1.6rem;
+    border: .15rem solid black;
+    
+
+}
+
+::placeholder{
+    font-size: .9rem;
+}
+:focus{
+    border: .15rem solid blue;
+}
+.user-img{
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+}
+
+.main-user{
+    width: 16%;
+
+}
+.user{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+span{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.follow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.follow img{
+    width: 7rem;
+    height: 7rem;
+    border: .1rem solid black;
+    line-height: 0;
+    font-size: 0;
+    border-radius: 50%;
+}
+footer h2{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.cat-img{
+    width: 30%;
+}
+.cat-img img{
+    width: 100%;
+}
+button{
+    padding: .6rem 1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    background-color: chocolate;
+    border: none;
+    border: .145rem solid blue;
+}
