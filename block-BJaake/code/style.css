@@ -1,0 +1,137 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,option
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+html{
+    font-size: 16px;
+}
+body{
+    line-height: 1.5;
+    background-color:#F1DEB8 ;
+}
+
+.container{
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header{
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    padding: .7rem;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-weight: normal;
+}
+main{
+    text-align: center;
+}
+
+select{
+    margin-top: 2rem;
+    padding: .5rem .4rem;
+    font-size: 1.2rem;
+
+}
+.opt{
+    font-size: 1.5rem;
+    
+}
+img{
+    width: 100%;
+}
+figure{
+    width: 30%;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+article{
+    display: flex;
+  
+align-items: center;
+   text-align: start
+   
+}
+span{
+    background-color: teal;
+    color: white;
+    padding: .4rem .8rem;
+    border-radius: 1rem;
+}
+.read{
+    display: flex;
+    justify-content: end;
+}
+a{
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: .4rem .8rem;
+    text-decoration: none;
+}
+p{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: black;
+    margin: 1rem 0;
+}
+.news-box{
+    margin-top: 2rem;
+}
