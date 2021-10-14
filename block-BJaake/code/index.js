@@ -10,15 +10,15 @@ function newsObj(e) {
     xhr.onload = function () {
         let data = JSON.parse(xhr.response);
 
+
         data.forEach(ele => {
             if (e.target.value === ele.newsSite) {
-                console.log(ele);
-
-
 
                 createUI(ele);
             }
         })
+
+
     }
     xhr.onerror = function () {
         console.log(`Something went wrong`);
@@ -48,6 +48,7 @@ function createUI(ele) {
     diva.classList.add('read');
     let a = document.createElement('a');
     a.innerText = 'Read More'
+    a.href = ele.url;
     diva.append(a);
     div.append(span, p, diva);
     article.append(figure, div);
@@ -55,7 +56,7 @@ function createUI(ele) {
 }
 
 function selectHandler(e) {
-    console.log(e.target.value);
+
     newsObj(e);
 
 }
