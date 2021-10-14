@@ -184,6 +184,8 @@ in exp 8 we are trying to chain the output from above then that is used as next 
 let promise=new Promise((res,rej)=>{
     res(`John`);
 }).then((data)=>{
+    return Promise.resolve('Arya');
+}).then((data)=>{
     console.log(data);
     return new Promise((res,rej)=>{
         setTimeout(()=>{
