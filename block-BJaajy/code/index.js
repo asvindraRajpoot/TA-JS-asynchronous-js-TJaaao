@@ -1,43 +1,40 @@
  //Create four promises that resolve after 1, 2, 3 and 4 seconds with a random value. Using `Promise.all` log the value of each promise that it resolved with.
-// let one = new Promise((res,rej)=>{
-//     setTimeout(()=>{
-//         res('one');
-//     },1000)
-// });
-// let two = new Promise((res,rej)=>{
-//     setTimeout(()=>{
-//         res('two');
-//     },2000)
-// });
-// let three = new Promise((res,rej)=>{
-//     setTimeout(()=>{
-//         res('three');
-//     },3000)
-// });
-// let four = new Promise((res,rej)=>{
-//     setTimeout(()=>{
-//         res('four');
-//     },4000)
-// });
-// let all=Promise.all([one,two,three,four]).then((res)=>{
-//     res.forEach((ele)=>{
-//         console.log(ele);
-//     })
-// })
+let one = new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('one');
+    },1000)
+});
+let two = new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('two');
+    },2000)
+});
+let three = new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('three');
+    },3000)
+});
+let four = new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('four');
+    },4000)
+});
+let all=Promise.all([one,two,three,four]).then((console.log))
+
 
  //Create a list of 5 Github usernames in an array and using `Promise.all` get access to the data of each user from GitHub API. Log the number of followers of each user.
 
-//  let usernames=['mojombo','defunkt','pjhyett','wycats','ezmobius'];
+ let usernames=['mojombo','defunkt','pjhyett','wycats','ezmobius'];
  
-//  const usernameData=Promise.all(
-//  usernames.map((user)=>{
-//      return fetch(`https://api.github.com/users/${user}`).then((res)=>res.json())
-//  })
-//  ).then((followers)=>{
-//      followers.forEach((follower,i)=>{
-//          console.log(`Followers of ${usernames[i]}:`,follower.followers)
-//      })
-//  });
+ const usernameData=Promise.all(
+ usernames.map((user)=>{
+     return fetch(`https://api.github.com/users/${user}`).then((res)=>res.json())
+ })
+ ).then((followers)=>{
+     followers.forEach((follower,i)=>{
+         console.log(`Followers of ${usernames[i]}:`,follower.followers)
+     })
+ });
  
 
  //Use `Promise.race` to see which API resolves faster from the given list of URLs. Log the object you get from the promise that is resolved faster.
@@ -61,7 +58,7 @@ const two = new Promise((resolve, reject) =>
 const three = new Promise((resolve, reject) =>
   setTimeout(() => resolve('John'), 3000)
 );
-let allSettled=Promise.allSettled([one,two,three]);
+ let allSettled=Promise.allSettled([one,two,three]);
 
 // What will be the output of the following code snippet? How much time will it take for the promise to resolve?
 
