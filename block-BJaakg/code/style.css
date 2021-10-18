@@ -1,0 +1,170 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*,
+::before,
+::after{
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+html{
+    font-size: 16px;
+}
+
+body{
+
+    line-height: 1.5;
+}
+
+header{
+    background: linear-gradient(to right, rgba(118,89,171,.7),rgba(118,89,171,.5));
+    padding: 1rem;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+main{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+   
+}
+li{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px dashed red;
+}
+a{
+    text-decoration: none;
+}
+
+h2{
+    margin: 1rem 0;
+    font-size: 1.6rem;
+}
+span{
+    margin: 1rem 0;
+    font-size: 1rem;
+    display: inline-block;
+}
+a{
+    background-color: black;
+    padding: .5rem .9rem;
+    color: goldenrod;
+    border-radius: 1rem;
+   
+}
+div{
+    margin-bottom: 2rem;
+}
+.book-box{
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+.listHeader{
+   
+   
+    margin-top: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+footer{
+    background-color: seagreen;
+    position: relative;
+}
+small{
+    display: inline-block;
+    position: absolute;
+    right: 1rem;
+    font-size: 1.5rem;
+    top: .5rem;
+}
+
+h6{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+h4{
+    font-size: 1.2rem;
+    border: .1rem solid white;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+}
+.close{
+    color: white;
+    font-weight: bold;
+}
