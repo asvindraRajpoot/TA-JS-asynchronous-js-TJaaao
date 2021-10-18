@@ -2,6 +2,9 @@ let bookBox=document.querySelector('.book-box');
 let listOfCharacters=document.querySelector('.listOfCharacters');
 let footer=document.querySelector('footer');
 const url=`https://www.anapioficeandfire.com/api/books`
+let spinner=document.querySelector('.spinner');
+let spinner2=document.querySelector('.spinner2');
+
 
 {/* <li>
     <h2>Book Name</h2>
@@ -26,6 +29,7 @@ listOfCharacters.append(listHead);
 
 
 function createUIOfCharacters(item){
+    
     console.log('it is characters')
   
     let div=document.createElement('div');
@@ -33,6 +37,7 @@ function createUIOfCharacters(item){
     h4.innerText=`${item.name} (${item.aliases.toString()})`;
     div.append(h4);
     characterList.append(div);
+
 
 }
 
@@ -47,14 +52,21 @@ close.addEventListener('click',(e)=>{
 
 
 function btnHandler(e,book){
+    handleSpiner2(true)
     characterList.innerText='CharacterList'
     bookBox.style.display='none'
     footer.style.display='block';
+   
     listOfCharacters.style.display='block';
     console.log(e.target,book.characters);
+   
     book.characters.forEach(character=>{
      
-        fetch(`${character}`).then((res)=>res.json()).then((data)=>createUIOfCharacters(data));
+       
+        fetch(`${character}`).then((res)=>res.json()).then((data)=>{
+            spinner2.innerHTML="";
+            handleSpiner2();
+            createUIOfCharacters(data)});
     })
 }
 
@@ -72,6 +84,7 @@ function createUI(book){
     strong.innerText=`Show Characters (${book.characters.length})`
     a.append(strong);
     a.addEventListener('click',(e)=>{
+     
       btnHandler(e,book);
     })
     
@@ -80,8 +93,38 @@ function createUI(book){
     bookBox.append(li);
     
 }
-let bookData=fetch(url).then((res)=> res.json()).then(book=>{
-    book.forEach(ele=>{
-        createUI(ele);
-    })
-});
+
+function handleSpiner(status=false){
+
+    if(status){
+        spinner.innerHTML=`<div class='center'> <div class="loader loader1"></div></div>`
+    }
+   
+
+}
+
+
+function handleSpiner2(status=false){
+
+    if(status){
+        spinner2.innerHTML=`<div class='center'> <div class="loader loader1"></div></div>`
+    }
+   
+
+}
+function init(){
+    handleSpiner(true);
+    let bookData=fetch(url).then((res)=> res.json()).then(book=>{
+        spinner.innerHTML="";
+        handleSpiner();
+   
+        book.forEach(ele=>{
+            createUI(ele);
+        })
+    });
+}
+init();
+
+
+
+
