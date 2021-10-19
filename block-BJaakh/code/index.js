@@ -4,11 +4,6 @@ const url = `https://sleepy-falls-37563.herokuapp.com/api/todo`;
 
 
 
-fetch(url).then((res) => res.json()).then((data) => {
-
-    console.log(data);
-    createUI(data.todos);
-});
 
 
 function closeHandler(id) {
@@ -18,12 +13,10 @@ function closeHandler(id) {
             'content-Type': 'application/json'
         },
 
+    }).then(res=>res.json()).then(()=>{
+        displayTodos();
     })
-    fetch(url).then(res => res.json()).then(data => {
-
-        createUI(data.todos)
-    });
-
+   
 
 
 }
@@ -42,12 +35,41 @@ function checkboxHandler(id, e) {
             'content-Type': 'application/json'
         },
         body: JSON.stringify(obj)
-    }).then((res) => res.json());
-    fetch(url).then(res => res.json()).then(data => {
-        createUI(data.todos)
-
-    });
+    }).then((res) => res.json()).then(()=>{
+        displayTodos();
+    })
+   
 }
+
+
+function handleEdit(e,id,title){
+
+    let input=document.createElement('input');
+    input.value=title;
+    let p=e.target;
+    let parent=e.target.parentElement;
+    parent.replaceChild(input,p);
+    input.addEventListener('keyup',(e)=>{
+        if(e.keyCode===13 && e.target.value!=''){
+            let obj = {
+                todo: {
+                    title: e.target.value,
+                },
+            }
+        
+            fetch(url + `/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-Type': 'application/json'
+                },
+                body: JSON.stringify(obj)
+            }).then((res) => res.json()).then(()=>{
+                displayTodos();
+            })
+        }
+    })
+}
+
 
 
 function createUI(todosArray) {
@@ -58,6 +80,9 @@ function createUI(todosArray) {
         let article = document.createElement('article');
         let todo = document.createElement('p');
         todo.innerText = ele.title;
+        todo.addEventListener('dblclick',(e)=>{
+            handleEdit(e,ele._id,ele.title);
+        })
         let checkbox = document.createElement('input');
         checkbox.setAttribute('type', 'checkbox');
         checkbox.checked = ele.isCompleted;
@@ -94,15 +119,13 @@ function inputHandler(e) {
                 'content-Type': 'application/json'
             },
             body: JSON.stringify(obj),
+        }).then(res=>res.json()).then(()=>{
+            displayTodos();
         })
 
 
         e.target.value = '';
-        fetch(url).then((res) => res.json()).then((data) => {
-
-            console.log(data);
-            createUI(data.todos);
-        });
+       
     }
 
 
@@ -115,10 +138,12 @@ input.addEventListener('keyup', (e) => {
     inputHandler(e);
 })
 
+function displayTodos(){
+    fetch(url).then((res) => res.json()).then((data) => {
 
-fetch(url).then((res) => res.json()).then((data) => {
-
-    console.log(data);
-    createUI(data.todos);
-});
+        console.log(data);
+        createUI(data.todos);
+    });
+}
+displayTodos();
 
